@@ -1,0 +1,243 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Brand Color */
+    --Primary: #E67E22;
+
+    /* Primary Tokens */
+    --Primary-90: #EC9E59;
+    --Primary-80: #F0AF76;
+    --Primary-70: #F2B988;
+    --Primary-60: #F5CEAB;
+    --Primary-50: #F9E0CA;
+    --Primary-40: #FCF0E4;
+    --Primary-30: #FDF6F0;
+    --Primary-20: #FEFAF6;
+
+    /* Neutral */
+    --Neutral: #333;
+    --Neutral-90: #666666;
+    --Neutral-80: #818181;
+    --Neutral-70: #919191;
+    --Neutral-60: #B2B2B2;
+    --Neutral-50: #CECECE;
+    --Neutral-40: #E7E7E7;
+    --Neutral-30: #F1F1F1;
+    --Neutral-20: #F7F7F7;
+    --White: #fff;
+
+    /* Color State */
+    --color-hover: #C0691C;
+
+    /* Semantic Colors */
+    --Yellow: #eab308;
+    --Green: #16a34a;
+}
+
+html {
+    /* font-size = 10px */
+    /* 10px / 16px = 0.625 = 62.5% */
+    /* percentage of user's browser font-sizing setting */
+    font-size: 62.5%;
+    overflow-x: hidden;
+    /* Does not work on safari */
+    /* scroll-behavior: smooth; */
+}
+
+body {
+    font-family: sans-serif;
+    line-height: 1;
+    font-weight: 400;
+    color: var(--Neutral-90);
+    font-family: "Rubik", sans-serif;
+}
+
+/* ***************************** */
+/* Reusable Component            */
+/* ***************************** */
+
+.container {
+    /* 1140px */
+    max-width: 120rem;
+    padding: 0 3.2rem;
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    row-gap: 9.6rem;
+    column-gap: 6.4rem;
+}
+
+.grid:not(:last-child) {
+    margin-bottom: 9.6rem;
+}
+
+.grid--2-cols {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3-cols {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4-cols {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* .grid--5-cols {
+    grid-template-columns: repeat(5, 1fr);
+} */
+
+.grid--center-vertical {
+    align-items: center;
+
+}
+
+.heading-primary {
+    font-size: 5.2rem;
+    line-height: 1.05;
+    margin-bottom: 3.2rem;
+}
+
+.heading-primary,
+.heading-secondary,
+.heading-tertiary {
+    font-weight: 700;
+    color: var(--Neutral);
+    letter-spacing: -0.5px;
+}
+
+.heading-secondary {
+    font-size: 4.4rem;
+    line-height: 1.2;
+    margin-bottom: 9.6rem;
+}
+
+.heading-tertiary {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 3.2rem;
+}
+
+.sub-heading {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--Primary);
+    text-transform: uppercase;
+    margin-bottom: 1.6rem;
+    letter-spacing: 0.75px;
+}
+
+
+.btn,
+.btn:link,
+.btn:visited {
+    font-size: 2rem;
+    padding: 1.6rem 3.2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 600;
+
+    /* Put transition on original "state" */
+    /* transition: background-color 0.3s; */
+    transition: all 0.3s;
+
+    /* only necessary for .btn */
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.btn--full:link,
+.btn--full:visited {
+    background-color: var(--Primary);
+    color: var(--White);
+}
+
+.btn--full:hover,
+.btn--full:active {
+    background-color: var(--color-hover);
+}
+
+.btn--outlined:link,
+.btn--outlined:visited {
+    background-color: var(--White);
+    color: var(--Neutral-90);
+}
+
+.btn--outlined:hover,
+.btn--outlined:active {
+    background-color: var(--Primary-40);
+    /* border: 3px solid var(--White); */
+
+    /* Trick to add border inside */
+    box-shadow: inset 0 0 0 3px var(--White);
+}
+
+.btn--form{
+    background-color: #4D2A0B;
+    color: var(--White);
+    align-self: end;
+    padding: 1.2rem;
+}
+
+.link:link,
+.link:visited {
+    display: inline-block;
+    color: var(--Primary);
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 2px;
+    transition: all 0.3s;
+}
+
+.link:hover,
+.link:active {
+    color: var(--Primary);
+    border-bottom: 1px solid transparent;
+}
+
+.list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+
+.list-icon {
+    color: var(--Primary);
+    width: 3rem;
+    height: 3rem;
+}
+
+.list-item {
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    line-height: 1.2;
+}
+
+/* Helper/settings classes */
+.margin-right-sm {
+    margin-right: 1.6rem !important;
+}
+
+.margin-bottom-md {
+    margin-bottom: 4.8rem !important;
+}
+
+.center-text {
+    text-align: center;
+}
+
+strong {
+    font-weight: 500;
+}
